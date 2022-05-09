@@ -24,6 +24,7 @@ urlpatterns = [
     path("pages", ListBlogPage.as_view(), name="pages"),
     path("pages/<int:pk>", DetailBlogPage.as_view(), name="page-detail"),
     path("pages/", include("proyecto_final.blog.urls", namespace="pages")),
+    path("accounts/", include("proyecto_final.accounts.urls", namespace="accounts")),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
