@@ -7,18 +7,23 @@ from django.views.generic import TemplateView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework.authtoken.views import obtain_auth_token
 
+from proyecto_final.blog.view import ListBlogPage, DetailBlogPage
+
 urlpatterns = [
-    # path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    # path(
+    #path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    #path(
     #     "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
     # ),
-    # # Django Admin, use {% url 'admin:index' %}
-    # path(settings.ADMIN_URL, admin.site.urls),
-    # # User management
-    # path("users/", include("proyecto_final.users.urls", namespace="users")),
-    # path("accounts/", include("allauth.urls")),
-    # # Your stuff: custom urls includes go here
+    # Django Admin, use {% url 'admin:index' %}
+    path(settings.ADMIN_URL, admin.site.urls),
+    # User management
+    #path("users/", include("proyecto_final.users.urls", namespace="users")),
+    #path("accounts/", include("allauth.urls")),
+    # Your stuff: custom urls includes go here
     path("", TemplateView.as_view(template_name="blog/home.html"), name="home"),
+    path("pages", ListBlogPage.as_view(), name="pages"),
+    path("pages/<int:pk>", DetailBlogPage.as_view(), name="page-detail"),
+    path("pages/", include("proyecto_final.blog.urls", namespace="pages")),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

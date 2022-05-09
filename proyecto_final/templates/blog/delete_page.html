@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>Curso Formulario</title>
+</head>
+
+<body>
+    <h1>Cursos</h1>
+    
+    <form method="POST">
+      {% csrf_token %}
+      ¿Esta seguro que desea borrar el blog de: "{{ object.title }}" creado por "{{object.author}}" ?
+      <input type="submit" value="Enviar" />
+    </form>    
+
+</body>
+
+</html>
