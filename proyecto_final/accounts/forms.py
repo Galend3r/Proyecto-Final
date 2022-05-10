@@ -15,6 +15,7 @@ class ProfileForms(forms.Form):
         model = Profile
         fields = ('bio', 'link','profile_image')
 
+#modifique la class Meta en forms.py de django.contrib linea 98 agrego campo email y en la clase UserCreationFormCustom agreo el campo para que guarde el dato
 class UserCreationFormCustom(UserCreationForm):
     
     def save(self, commit: bool = True) -> User:
