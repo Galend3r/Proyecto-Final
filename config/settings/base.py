@@ -86,6 +86,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "proyecto_final.users",
     "proyecto_final.blog",
+    "proyecto_final.accounts",
     "ckeditor",
     # Your stuff: custom apps go here
 ]
