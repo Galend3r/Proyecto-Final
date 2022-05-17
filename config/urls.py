@@ -21,11 +21,13 @@ urlpatterns = [
     #path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     path("", TemplateView.as_view(template_name="blog/home.html"), name="home"),
+    path("aboutus", TemplateView.as_view(template_name="blog/aboutus.html"), name="aboutus"),
     path("pages", ListBlogPage.as_view(), name="pages"),
     path("pages/<int:pk>", DetailBlogPage.as_view(), name="page-detail"),
     path("pages/", include("proyecto_final.blog.urls", namespace="pages")),
     path("accounts/", include("proyecto_final.accounts.urls", namespace="accounts")),
     path("messages/", include("proyecto_final.messages_blog.urls", namespace="messages")),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -6,7 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Landing Page - Start Bootstrap Theme</title>
+        {% block title %}
+        <title>Home</title>
+        {% endblock %}
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'blog/assets/favicon.ico' %}" />
         <!-- Bootstrap icons-->
@@ -20,10 +22,13 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
-                <a class="btn btn-primary" href="#signup">Sign Up</a>
+                <a class="btn btn-primary" href="{% url 'aboutus' %}">About Us</a>
+                <a class="btn btn-primary" href="#signup">Blogs</a>
+                <a class="btn btn-primary" href="#signup">Sing Up</a>
+                <a class="btn btn-primary" href="#signup">Register Now</a>
             </div>
         </nav>
+        {% block content %}
         <!-- Masthead-->
         <header class="masthead">
             <div class="container position-relative">
@@ -32,38 +37,30 @@
                         <div class="text-center text-white">
                             <!-- Page heading-->
                             <h1 class="mb-5">Bienvenido a Wikiblog</h1>
-                            <h1 class="mb-5">Un mundo de ideas</h1>
+                            <h1 class="mb-5">Un lugar para compartir</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
+        {% endblock %}
         <!-- Footer-->
         <footer class="footer bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
-                        <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">About</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
-                        </ul>
                         <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2022. All Rights Reserved.</p>
                     </div>
                     <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                         <ul class="list-inline mb-0">
                             <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                                <a href="https://www.facebook.com/"><i class="bi-facebook fs-3"></i></a>
                             </li>
                             <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                                <a href="https://twitter.com/"><i class="bi-twitter fs-3"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                                <a href="https://www.instagram.com/"><i class="bi-instagram fs-3"></i></a>
                             </li>
                         </ul>
                     </div>
