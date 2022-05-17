@@ -25,6 +25,7 @@ urlpatterns = [
     path("pages/<int:pk>", DetailBlogPage.as_view(), name="page-detail"),
     path("pages/", include("proyecto_final.blog.urls", namespace="pages")),
     path("accounts/", include("proyecto_final.accounts.urls", namespace="accounts")),
+    path("messages/", include("proyecto_final.messages_blog.urls", namespace="messages")),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

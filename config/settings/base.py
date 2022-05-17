@@ -87,6 +87,7 @@ LOCAL_APPS = [
     "proyecto_final.users",
     "proyecto_final.blog",
     "proyecto_final.accounts",
+    "proyecto_final.messages_blog",
     "ckeditor",
     # Your stuff: custom apps go here
 ]

@@ -9,16 +9,15 @@
     </br>
     </br>
     </br>
-    {% if onject_list != 0 %}
-      {% for blog in object_list %}
-          <li>{{blog.title}} - {{blog.author.name}} <a href= "{% url 'page-detail' blog.pk %}">Mas...</a> <a href= "{% url 'pages:edit' blog.pk %}">Editar</a> <a href= "{% url 'pages:delete' blog.pk %}">Eliminar</a></br></li>
-      {% endfor %}
-    {% else %}
+    
+    {% for blog in object_list %}
+      <li>{{blog.title}} - {{blog.author.name}} <a href= "{% url 'page-detail' blog.pk %}">Mas...</a> <a href= "{% url 'pages:edit' blog.pk %}">Editar</a> <a href= "{% url 'pages:delete' blog.pk %}">Eliminar</a></br></li>
+    {% empty %}
     </br>
     </br>
     </br>
       Sin blogs para mostrar, cree uno.
-    {% endif %}
+    {% endfor %}
     
 </body>
 

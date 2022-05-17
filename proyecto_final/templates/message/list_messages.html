@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>Title of the document</title>
+</head>
+
+<body>
+    {% if messages %}
+        {% for message in messages %}
+        <li>De: {{message.from_message}}   -   Mensaje: {{message.message}}  </br></br></br></li>
+        {% endfor %}    
+    {% else %}
+        Sin mensajes.
+    {% endif %}
+</body>
+
+</html>
