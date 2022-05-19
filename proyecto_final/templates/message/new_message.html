@@ -1,15 +1,14 @@
-<html>
-<head>
-  <title>Title of the document</title>
-</head>
+{% extends 'blog/home.html' %}
 
-<body>
-    <h1>Crear blog</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Enviar" />
-      </form>
-</body>
+{% block title %}
+  <title> New message </title>
+{% endblock %}
 
-</html>
+{% block content %}
+  <h1>Nuevo mensaje</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-primary" type="submit" value="Enviar" />
+  </form>
+{% endblock %}

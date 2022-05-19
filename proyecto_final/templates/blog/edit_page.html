@@ -1,18 +1,15 @@
-<html>
-<head>
-  <title>Curso Formulario</title>
-</head>
+{% extends 'blog/home.html' %}
 
-<body>
-    <h1>Cursos</h1>
-    
-    <form method="POST">
-      {% csrf_token %}
-      {{ form.media }}
-      {{ form.as_p }}
-      <input type="submit" value="Enviar" />
-    </form>    
+{% block title %}
+  <title> Edit Blog </title>
+{% endblock %}
 
-</body>
-
-</html>
+{% block content %}
+  <h1>Editar blog</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form.as_p }}
+    <input class="btn btn-primary" type="submit" value="Enviar" />
+  </form>
+{% endblock %}

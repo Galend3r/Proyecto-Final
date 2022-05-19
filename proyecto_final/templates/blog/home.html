@@ -17,15 +17,25 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'blog/css/styles.css' %}" rel="stylesheet" />
+        <link href="{% static 'blog/css/styles2.css' %}" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
+                <a class="btn btn-primary" href="{% url 'home' %}">Home</a>
                 <a class="btn btn-primary" href="{% url 'aboutus' %}">About Us</a>
-                <a class="btn btn-primary" href="#signup">Blogs</a>
-                <a class="btn btn-primary" href="#signup">Sing Up</a>
-                <a class="btn btn-primary" href="#signup">Register Now</a>
+                <a class="btn btn-primary" href="{% url 'pages' %}">Blogs</a>
+                
+                {% if request.user.is_authenticated %}
+                <p class="text-muted small mb-4 mb-1g-0">Hola, {{request.user.username}}!!!</p>
+                <a class="btn btn-primary" href="{% url 'accounts:profile' %}">Perfil</a>
+                <a class="btn btn-primary" href="{% url 'messages:listmessage' %}">Mensajes</a>
+                <a class="btn btn-primary" href="{% url 'accounts:logout' %}">Logout</a>
+                {% else %}
+                    <a class="btn btn-primary" href="{% url 'accounts:login' %}">Sign Up</a>
+                    <a class="btn btn-primary" href="{% url 'accounts:singup' %}">Register Now</a>
+                {% endif %}
             </div>
         </nav>
         {% block content %}

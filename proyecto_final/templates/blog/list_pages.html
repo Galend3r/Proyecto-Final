@@ -1,24 +1,22 @@
-<html>
-<head>
-  <title>Title of the document</title>
-</head>
+{% extends 'blog/home.html' %}
 
-<body>
-    <h1>Blogs</h1>
-    <a href= "{% url 'pages:create' %}">Crear Blog</a>
+{% block title %}
+  <title> Blogs </title>
+{% endblock %}
+
+{% block content %}
+  <h1>Blogs</h1>
+    <a class="btn btn-primary" href= "{% url 'pages:create' %}">Crear Blog</a>
     </br>
     </br>
     </br>
     
     {% for blog in object_list %}
-      <li>{{blog.title}} - {{blog.author.name}} <a href= "{% url 'page-detail' blog.pk %}">Mas...</a> <a href= "{% url 'pages:edit' blog.pk %}">Editar</a> <a href= "{% url 'pages:delete' blog.pk %}">Eliminar</a></br></li>
+      <li>{{blog.title}} - {{blog.author.name}} <a class="btn btn-primary" href= "{% url 'page-detail' blog.pk %}">Mas...</a> <a class="btn btn-primary" href= "{% url 'pages:edit' blog.pk %}">Editar</a> <a class="btn btn-primary" href= "{% url 'pages:delete' blog.pk %}">Eliminar</a></br></li>
     {% empty %}
     </br>
     </br>
     </br>
       Sin blogs para mostrar, cree uno.
     {% endfor %}
-    
-</body>
-
-</html>
+{% endblock %}

@@ -1,17 +1,15 @@
-<html>
-<head>
-  <title>Curso Formulario</title>
-</head>
+{% extends 'blog/home.html' %}
 
-<body>
-    <h1>Cursos</h1>
-    
-    <form method="POST">
-      {% csrf_token %}
-      ¿Esta seguro que desea borrar el blog de: "{{ object.title }}" creado por "{{object.author}}" ?
-      <input type="submit" value="Enviar" />
-    </form>    
+{% block title %}
+  <title> Delete blog </title>
+{% endblock %}
 
-</body>
+{% block content %}
 
-</html>
+  <form method="POST">
+    {% csrf_token %}
+    ¿Esta seguro que desea borrar el blog de: "{{ object.title }}" creado por "{{object.author}}" ?
+    <input class="btn btn-primary" type="submit" value="Enviar" />
+  </form>
+
+{% endblock %}

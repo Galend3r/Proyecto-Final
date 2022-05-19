@@ -1,24 +1,22 @@
-<html>
-<head>
-  <title>Title of the document</title>
-</head>
+{% extends 'blog/home.html' %}
 
-<body>
+{% block title %}
+  <title> Edit avatar </title>
+{% endblock %}
 
+{% block content %}
   <h1>Formulario edicion de avatar</h1>
   <h1>De {{user.username}}</h1>
+
+
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+      
+    {% if form %} 
+      <input class="btn btn-primary" type="submit" value="Guardar"/>
+    {% endif %}
+
+  </form>
   
-
-    <form action="" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{form.as_p}}
-        
-        {% if form %} 
-          <input type="submit" value="Guardar"/>
-        {% endif %}
-
-    </form>
-
-</body>
-
-</html>
+{% endblock %}

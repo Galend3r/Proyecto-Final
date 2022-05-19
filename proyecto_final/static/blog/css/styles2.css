@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+.imagenesPrueba {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2.5rem;
+
+}
+
+.estiloTitulo {
+    text-align: center;
+    text-decoration: solid;
+}
+
+.estiloParrafo {
+    text-align: center;
+    text-decoration: solid;
+    font-family: "Poiret One";
+    font-weight: 1500;
+    font-size: larger;
+}

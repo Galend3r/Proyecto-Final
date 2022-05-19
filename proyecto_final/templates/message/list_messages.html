@@ -1,16 +1,19 @@
-<html>
-<head>
-  <title>Title of the document</title>
-</head>
+{% extends 'blog/home.html' %}
 
-<body>
+{% block title %}
+  <title> Messages </title>
+{% endblock %}
+
+{% block content %}
+    <a class="btn btn-primary" href="{% url 'messages:newmessage' %}">Nuevo mensaje</a>
+    </br>
+    </br>
+    </br>
     {% if messages %}
         {% for message in messages %}
-        <li>De: {{message.from_message}}   -   Mensaje: {{message.message}}  </br></br></br></li>
+            <li>De: {{message.from_message}}   -   Mensaje: {{message.message}}  </br></br></br></li>
         {% endfor %}    
     {% else %}
         Sin mensajes.
     {% endif %}
-</body>
-
-</html>
+{% endblock %}

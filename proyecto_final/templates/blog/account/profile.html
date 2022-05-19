@@ -1,20 +1,29 @@
-<html>
-<head>
-  <title>Title of the document</title>
-</head>
+{% extends 'blog/home.html' %}
 
-<body>
+{% block title %}
+  <title> Profile </title>
+{% endblock %}
 
-    <h1>Perfil</h1>
-    <h1>De Usuario: {{user.username}}</h1>
-</br>
-    <h1>Nombre: {{user.first_name}}</h1>
-    <h1>Apellido: {{user.last_name}}</h1>
-    <h1>Email: {{user.email}}</h1>
-    <h1>Link: <a href= "{{ link }}"> {{ link }} </a> </h1>
-    <h1> Bio: {{ bio }} </h1>
-    <img src = "{{profile_image.url}}">
+{% block content %}
 
-</body>
+  <h1>Perfil</h1>
+  <h1>De Usuario: {{user.username}}</h1>
+  </br>
+  <h1>Nombre: {{user.first_name}}</h1>
+  <h1>Apellido: {{user.last_name}}</h1>
+  <h1>Email: {{user.email}}</h1>
+  <a class="btn btn-primary" href= "{% url 'accounts:edit_profile' %}">Editar usuario</a> <a class="btn btn-primary" href= "{% url 'accounts:change_password' %}">Cambiar contraseña</a>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  <h1>Link: <a href= "{{ link }}"> {{ link }} </a> </h1>
+  <h1> Bio: {{ bio }} </h1>
+  <img src = "{{profile_image.url}}">
+  <a class="btn btn-primary" href= "{% url 'accounts:edit_avatar' %}">Editar perfil</a>
+  </br>
+  </br>
 
-</html>
+  
+{% endblock %}

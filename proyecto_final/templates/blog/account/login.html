@@ -1,24 +1,21 @@
-<html>
-<head>
-  <title>Title of the document</title>
-</head>
+{% extends 'blog/home.html' %}
 
-<body>
+{% block title %}
+  <title> Login </title>
+{% endblock %}
 
+{% block content %}
   {% if message %}
     <h1>{{message}}</h1>
   {% endif %}
 
-    <form action="" method="POST"> 
-        {% csrf_token %}
-        {{form.as_p}}
-        
-        {% if form %} 
-          <input type="submit" value="Iniciar sesion"/>
-        {% endif %}
+  <form action="" method="POST"> 
+    {% csrf_token %}
+    {{form.as_p}}
+    
+    {% if form %} 
+      <input class="btn btn-primary" type="submit" value="Iniciar sesion"/>
+    {% endif %}
 
-    </form>
-
-</body>
-
-</html>
+  </form>
+{% endblock %}

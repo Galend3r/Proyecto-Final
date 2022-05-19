@@ -1,23 +1,22 @@
-<html>
-<head>
-  <title>Title of the document</title>
-</head>
+{% extends 'blog/home.html' %}
 
-<body>
-    <h1>{{object.title}}</h1></br>
-    <small> Autor: {{object.author.name}} - {{object.page_date}}</small> </br>
-    <h1>{{object.caption}}</h1></br>
-    <h1>{{object.body|safe}}</h1></br>
-    {% if object.image %}
-      <h1><img src = "{{object.image.url}}"></h1>
-    {% endif %}
+{% block title %}
+  <title> Detail blog </title>
+{% endblock %}
 
-    </br>
-    </br>
-    </br>
-    </br>
-    <a href= "{% url 'home' %}"> Inicio</a> </br>
+{% block content %}
 
-</body>
+  <h1>{{object.title}}</h1></br>
+  <small> Autor: {{object.author.name}} - {{object.page_date}}</small> </br>
+  <h1>{{object.caption}}</h1></br>
+  <h1>{{object.body|safe}}</h1></br>
+  {% if object.image %}
+    <h1><img src = "{{object.image.url}}"></h1>
+  {% endif %}
 
-</html>
+  </br>
+  </br>
+  </br>
+  </br>
+
+{% endblock %}

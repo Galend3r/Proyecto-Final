@@ -1,22 +1,19 @@
-<html>
-<head>
-  <title>Title of the document</title>
-</head>
+{% extends 'blog/home.html' %}
 
-<body>
+{% block title %}
+  <title> Signup </title>
+{% endblock %}
 
+{% block content %}
   {% if message %}
     <h1>{{message}}</h1>
   {% endif %}
-  
-    <form action="" method="POST"> 
-        {% csrf_token %}
-        {{form.as_p}}
-        {% if form %} 
-          <input type="submit" value="Registrarse"/>
-        {% endif %}
-    </form>
 
-</body>
-
-</html>
+  <form action="" method="POST"> 
+    {% csrf_token %}
+    {{form.as_p}}
+    {% if form %} 
+      <input class="btn btn-primary" type="submit" value="Registrarse"/>
+    {% endif %}
+  </form>
+{% endblock %}
