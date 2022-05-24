@@ -5,15 +5,17 @@
 {% endblock %}
 
 {% block content %}
+<div class="centerInput">
   {% if message %}
     <h1>{{message}}</h1>
   {% endif %}
 
-  <form action="" method="POST"> 
+  <form action="" method="POST">
     {% csrf_token %}
     {{form.as_p}}
     {% if form %} 
       <input class="btn btn-primary" type="submit" value="Registrarse"/>
     {% endif %}
   </form>
+</div>
 {% endblock %}

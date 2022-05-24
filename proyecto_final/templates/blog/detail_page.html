@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-
+<div class="centerInput">
   <h1>{{object.title}}</h1></br>
   <small> Autor: {{object.author.name}} - {{object.page_date}}</small> </br>
   <h1>{{object.caption}}</h1></br>
@@ -13,7 +13,7 @@
   {% if object.image %}
     <h1><img src = "{{object.image.url}}"></h1>
   {% endif %}
-
+</div>
   </br>
   </br>
   </br>

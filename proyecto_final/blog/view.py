@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import *
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class ListBlogPage(ListView):
     model = BlogPage

@@ -5,11 +5,12 @@
 {% endblock %}
 
 {% block content %}
-
+<div class="centerInput">
   <form method="POST">
     {% csrf_token %}
     ¿Esta seguro que desea borrar el blog de: "{{ object.title }}" creado por "{{object.author}}" ?
     <input class="btn btn-primary" type="submit" value="Enviar" />
   </form>
+</div>
 
 {% endblock %}

@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+<div class="centerInput">
   {% if message %}
     <h1>{{message}}</h1>
   {% endif %}
@@ -16,6 +17,6 @@
     {% if form %} 
       <input class="btn btn-primary" type="submit" value="Iniciar sesion"/>
     {% endif %}
-
   </form>
+</div>
 {% endblock %}

@@ -142,10 +142,10 @@ class ProfileCreateUpdateView(TemplateView):
                     'profile_image' : miformulario.cleaned_data['profile_image'],
                 }
             )
+        self.template_name = 'blog/account/profile.html'
+        profile = Profile.objects.filter(user=request.user.id)
 
-            profile = Profile.objects.filter(user=request.user.id)
-
-            context = {
+        context = {
                 'form' : ProfileForms(
                     initial = {
                         'bio': profile[0].bio,
@@ -155,6 +155,7 @@ class ProfileCreateUpdateView(TemplateView):
                 )
             }
         return render(request, self.template_name, context)
+        
 
 class ProfileView(TemplateView):
     template_name = 'blog/account/profile.html'

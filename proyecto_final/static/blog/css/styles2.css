@@ -23,3 +23,26 @@
     font-weight: 1500;
     font-size: larger;
 }
+
+.botonesAlineados{
+    display: flex;
+    justify-content: start;
+    text-align: center;
+}
+
+.botonesAlineados2{
+    display: flex;
+    justify-content: end;
+    text-align: center;
+}
+
+.centerInput{
+    text-align: center;
+    text-decoration: solid;
+    background-color: aquamarine;
+    color: blue;
+}
+
+.marginBotton{
+    margin: 1%;
+}

@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+<div class="centerInput">
     <a class="btn btn-primary" href="{% url 'messages:newmessage' %}">Nuevo mensaje</a>
     </br>
     </br>
@@ -16,4 +17,5 @@
     {% else %}
         Sin mensajes.
     {% endif %}
+</div>
 {% endblock %}

@@ -5,10 +5,12 @@
 {% endblock %}
 
 {% block content %}
+<div class="centerInput">
   <h1>Nuevo mensaje</h1>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input class="btn btn-primary" type="submit" value="Enviar" />
   </form>
+</div>
 {% endblock %}
